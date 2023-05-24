@@ -1,18 +1,40 @@
-# ライブラリのインポート
-import decimal
+import pandas as pd
 
 #gpaを計算する関数の定義
 def get_gpa(score_list: list, credit_list: list):
+
+  # 引数の配列の中身をint方に変換
+  score_list, credit_list = convert2int(score_list, credit_list)
   
-  #GP積の和を求める
-  decimal.getcontext().prec=4
+  # GP積の和を求める
   result = 0
   for i, j in zip(score_list, credit_list):
-    gpa_tmp = decimal.Decimal((i-55)) * decimal.Decimal((j/10))
+    # GPAの計算方法は，README.mdを参照
+    gpa_tmp = (i-55) * (j/10)
     result += gpa_tmp
 
   # GPAを求める
-  decimal.getcontext().prec=3
-  result = decimal.Decimal(result) / decimal.Decimal(sum(credit_list))
+  result = result / sum(credit_list)
 
   return result
+
+
+def convert2int(score_list: list, credit_list: list):
+  # 保存しておくためのリストを初期化
+  score_list_int = []
+  credit_list_int = []
+
+  # int方に変換したものを格納
+  for i in score_list:
+    if not pd.isna(i):
+      score_list_int.append(int(i))
+    else:
+      score_list_int.append(0)
+
+  for i in credit_list:
+    if not pd.isna(i):
+      credit_list_int.append(int(i))
+    else:
+      credit_list_int.append(0)
+
+  return score_list_int, credit_list_int
