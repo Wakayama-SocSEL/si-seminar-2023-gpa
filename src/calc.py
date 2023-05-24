@@ -9,9 +9,13 @@ def get_gpa(score_list: list, credit_list: list):
   # GP積の和を求める
   result = 0
   for i, j in zip(score_list, credit_list):
-    # GPAの計算方法は，README.mdを参照
-    gpa_tmp = (i-55) * (j/10)
-    result += gpa_tmp
+  
+    if j == 2: # 2単位の授業の場合
+      gpa_tmp = (i-55)*(2/10)
+      result += gpa_tmp
+    else:
+      gpa_tmp = (i-55)/10
+      result += gpa_tmp
 
   # GPAを求める
   result = result / sum(credit_list)
