@@ -3,7 +3,7 @@ import pandas as pd
 
 # csvファイルをDF型で読み込む
 def load_csv(name: str):
-  # df = pd.read_csv('../csv_file/' + name, index_col=0)
+  # df = pd.read_csv('../csv_file/' + name, encoding='utf-8', header=5)
   df = pd.read_csv('../csv_file/' + name, encoding='utf-8', header=5)
   df = df.reset_index(drop=True)
   lim = list(df['科目名'] == ' ')

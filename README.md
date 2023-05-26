@@ -1,17 +1,15 @@
-## Set Up Python(pythonがインストールされていない方)
-次のページからpythonのインストールを行なってください [リンク](https://www.javadrive.jp/python/install/index1.html)
-インストールされているかの確認方法
-```sh
-$ python3 -V
-# python 3.X.X のようになっていればOK
-```
+## 難易度
+### Medium
 
 <br>
 
-## Start Up & Usage(Windowsの方はPowerShellを推奨)
+## ▶️ Start Up & Usage
+1. 次のボタンをクリックしてCloud Shell Editorを開く
+[![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://ide.cloud.google.com/?cloudshell_git_repo=https://github.com/SocSEL-SIseminar1-2023/gpa-calculater.git&cloudshell_workspace=./&cloudshell_tutorial=README.md)
+
+2. エディタ下部のターミナルで以下のコマンドを実行する
 ```sh
-$ git clone https://github.com/Wakayama-SocSEL/si-seminar-2023-gpa.git
-$ cd si-seminar-2023-gpa/src
+$ cd src
 $ python3 main.py
 # あなたのGPAは, ___です．
 ```
@@ -27,6 +25,7 @@ csv_file/
 ```
 
 ### Switch csv to use
+- 利用するcsvファイルの変更方法
 - src/main.py
 ``` py diff
  def main():
@@ -45,3 +44,10 @@ csv_file/
 ## GPA Calculation Method
 GPAの計算方法 [要項](https://www.wakayama-u.ac.jp/_files/00172820/GPA2016.pdf)
 $$SUM(((評価点)-55)*単位数/10) / SUM(単位数)$$
+
+<br>
+
+## 📗課題の例
+- リファクタリング
+- 算出されるGPAの有効数字を綺麗にする
+- GPA計算過程のバグを治す
