@@ -5,6 +5,7 @@
 
 ## ▶️ Start Up & Usage
 1. 次のボタンをクリックしてCloud Shell Editorを開く
+
 [![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://ide.cloud.google.com/?cloudshell_git_repo=https://github.com/SocSEL-SIseminar1-2023/gpa-calculater.git&cloudshell_workspace=./&cloudshell_tutorial=README.md)
 
 2. エディタ下部のターミナルで以下のコマンドを実行する
